@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./photo/logo2.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            background: url(./photo/背景图片2.jpg) no-repeat 0 0 transparent;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .head {
+            position: fixed;
+            top: -50px;
+            width: 1400px;
+            height: 50px;
+            margin-left: 60px;
+            background-color: steelblue;
+            border-radius: 10px;
+            z-index: 1;
+            transition: all 0.6s;
+        }
+
+        .head .user img {
+            width: 40px;
+            height: 40px;
+            margin-left: 750px;
+            margin-top: 5px;
+            border-radius: 50%;
+        }
+
+        .head .logo {
+            float: left;
+            margin-left: 50px;
+        }
+
+        .head .logo img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        .head .logo .logo_text {
+            color: black;
+        }
+
+        .head_purpose ul li {
+            float: right;
+            margin-right: 70px;
+            margin-top: -30px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .head_purpose ul li:hover {
+            color: skyblue;
+        }
+
+        .box {
+            width: 1200px;
+            height: 1000px;
+            margin: 80px auto;
+            backdrop-filter: blur(9px);
+            border-radius: 20px;
+            box-shadow: -2px 8px 37px 10px rgba(0, 0, 0, 0.66);
+        }
+
+        .box .main_head {
+            width: 1200px;
+            height: 150px;
+            border-radius: 20px;
+            border: 3px solid white;
+        }
+
+        .box .main_head .logo1 img {
+            float: left;
+            width: 120px;
+            height: 150px;
+            margin-left: 100px;
+            color: purple;
+        }
+
+        .box .main_head p {
+            float: left;
+            font-size: 35px;
+            margin-top: 60px;
+            margin-left: 150px;
+            animation: active 2s infinite;
+            transition: all 1s;
+        }
+
+        @keyframes active {
+
+            /*创建动画*/
+            0% {
+                opacity: 1;
+                font-weight: 500;
+            }
+
+            20% {
+                opacity: 0.5;
+                font-weight: 400;
+            }
+
+            50% {
+                opacity: 0.1;
+            }
+
+            70% {
+                opacity: 0.5;
+                font-weight: 400;
+            }
+
+            100% {
+                opacity: 1;
+                font-weight: 500;
+            }
+        }
+
+        .headaudio {
+            float: right;
+            width: 300px;
+            height: 148px;
+            border-left: 2px solid skyblue;
+        }
+
+        .headaudio .music img {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        .headaudio .music .music1 {
+            animation: circle 2s linear infinite;
+        }
+
+        .headaudio .music .music2 {
+            animation: jump1 1s infinite;
+        }
+
+        .headaudio .music .music3 {
+            animation: jump2 1.3s infinite;
+        }
+
+        @keyframes circle {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes jump1 {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes jump2 {
+
+            0%,
+            100% {
+                transform: translateY(10px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .box .contain {
+            float: left;
+            width: 1200px;
+            height: 650px;
+            border: 1px solid white;
+        }
+
+        .box .contain .containleft {
+            float: left;
+            width: 370px;
+            height: 550px;
+            margin-top: 50px;
+            margin-left: 30px;
+            border: 1px solid skyblue;
+        }
+
+        .box .contain .containleft .left_top {
+            position: relative;
+            height: 200px;
+            border-bottom: 1px solid skyblue;
+
+        }
+
+        .containleft .left_top .massage {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 5px;
+            margin-right: 130px;
+
+        }
+
+        .containleft .left_top .massage div {
+            margin-top: 30px;
+            font-weight: 700;
+            justify-content: end;
+            text-align: right;
+        }
+
+        /* .containleft .left_top .left_bottom{
+            display: flex;
+            flex-direction: column;
+        } */
+        .containleft .left_bottom #left {
+            float: left;
+            width: 165px;
+            height: 350px;
+            border-right: 1px solid skyblue;
+        }
+
+        .containleft .left_bottom #left ul {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .containleft .left_bottom #left ul li {
+            margin-top: 20px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .containleft .left_bottom #right {
+            float: right;
+        }
+
+        .containleft .left_bottom #right ul {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .containleft .left_bottom #right ul li {
+            margin-top: 40px;
+            margin-right: 50px;
+            font-size: 25px;
+            font-weight: 700;
+
+        }
+
+        .containleft .left_bottom #right ul li a {
+            color: black;
+        }
+
+        .containleft .left_bottom #right ul li :hover {
+            color: blue;
+        }
+
+        .box .contain .containright {
+            float: left;
+            width: 760px;
+            height: 550px;
+            margin-top: 50px;
+            margin-right: 30px;
+            border: 1px solid skyblue;
+        }
+        .box .contain .containright p{
+            text-indent: 2rem;
+            font-size: 19px;
+            line-height: 2.4rem;
+        }
+        .move{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="logo"><img src="./photo/logo2.ico" alt=""><a href="#" class="logo_text">我的网页</a></div>
+        <div class="user"><img src="./photo/头像.jpg" alt=""></div>
+        <div class="head_purpose">
+            <ul>
+                <li>联系我</li>
+                <li>注册</li>
+                <li>登录</li>
+                <li>我的</li>
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="main_head">
+            <div class="logo1"><img src="./photo/logo2.ico"></div>
+            <p>专注你的梦想，做自己的英雄。</p>
+            <div class="headaudio">
+                <div class="music">
+                    <img src="./photo/音乐光盘(1).png" style="width: 50px;height: 50px;" class="music1">
+                    <img src="./photo/音乐，符号2(1).png" style="width: 50px;height: 50px;" class="music2">
+                    <img src="./photo/音乐 (2)(1).png" style="width: 50px;height: 50px;" class="music3">
+                </div>
+                <audio id="audio" src="./audio/翠花不太脆 - 饕.mp3 " controls autoplay loop
+                    style="width: 300px; margin-top: 8px;"></audio>
+            </div>
+        </div>
+        <div class="contain">
+            <div class="containleft">
+                <div class="left_top">
+                    <img src="./photo/头像.jpg" style="width: 110px; height: 130px; margin-top: 20px; margin-left: 30px;">
+                    <div class="massage">
+                        <div> 用户名：<span></span></div>
+                        <div> 个性签名：<span></span></div>
+                        <div> 星座：<span></span></div>
+                    </div>
+                </div>
+                <div class="left_bottom">
+                    <div id="left">
+                        <ul>
+                            <li>C</li>
+                            <li>H</li>
+                            <li>O</li>
+                            <li>I</li>
+                            <li>C</li>
+                            <li>E</li>
+                        </ul>
+                    </div>
+                    <div id="right">
+                        <ul>
+                            <li><a href="" class="move">主页</a></li>
+                            <li><a href="">图集</a></li>
+                            <li><a href="">关于我</a></li>
+                            <li><a href="">留言</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="containright">
+                <p>没有狂暴的风沙，就没有壮观的沙漠;没有汹涌的波浪，就没有没有宏伟的大海;没有努力地奋斗，就没有绚丽的人生。
+                    常言道“不经历风雨怎能看见彩虹”，在大家生活中也同样如此“不经历奋斗怎能尝到快乐”;面对困难，大家不能蜷缩在墙角瑟瑟发抖，
+                    而应该站起来，拍拍身上的泥土，努力地奋斗。别被困难所迷惑，别被困难所击倒，别对自己丧失信心;没有过不去的坎，没有打不破的困难，
+                    没有经历不了的事，只要你努力去做了，努力奋斗了，就一定是最棒的！雏鹰在悬崖中学会翱翔;仙人掌在沙漠中努力生存，
+                    大家难道就不能在逆境中奋斗吗?居里夫人制造镭，莱特兄弟制造飞机，他们的成功都是白来的吗?当然不是，他们的成功来自千百次的努力和坚持不懈的奋斗。
+                    古往今来，那些功成名就的大人物那个没有经过困境呢?伟大的作品不是靠力量，而是靠坚持来完成的。凡事欲其成功，必须付出代价——奋斗，奋斗并不困难，
+                    但如果你连奋斗的勇气都没有，那么你只能被困难所击倒。所以，大家应当努力奋斗，有所作为。这样，大家就可以说大家没有虚度年华，并有可能在时间的沙滩上留下足迹。
+                    “世上无难事，只怕有心人”。风雨之后，便是彩虹;付出之后，便是收获;奋斗之后，便是绚丽的人生！现在就行动起来吧，不要再犹豫，别到了白发鬓鬓时，
+                    才垂头低叹，低叹这逝去的青春！
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const box = document.querySelector('.box')
+        const head = document.querySelector('.head')
+        window.addEventListener('scroll', function () {
+            const n = document.documentElement.scrollTop
+            if (n >= box.offsetTop) {
+                head.style.top = 0
+            } else {
+                head.style.top = '-50px'
+            }
+        })
+        const li = document.querySelectorAll('#right ul li')
+        li.addEventListener('click',function(){
+            document.querySelector('.move').classList.remove('move')
+            li.classList.add('move')
+        })
+    </script>
+</body>
+
+</html>

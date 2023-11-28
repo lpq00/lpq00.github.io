@@ -6,118 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-        }
         body{
-            background: url(photo/背景图片3.jpg) no-repeat 0 0 transparent;
+            background:url(https://img.zcool.cn/community/0162c25b51b518a80121ade002f658.jpg@1280w_1l_2o_100sh.jpg) no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
         }
-      
-        h1{
-           
-            margin-left: 620px;
-        }
-        .box{
-          display: flex;
-          position: relative;
-            /* justify-content: center;
-            align-items: center; */
-            width: 400px;
-            height: 300px;
-            /* background-color: blue; */
-            margin: 200px auto;
-            backdrop-filter: blur(9px);
-            border-radius: 20px;
-            box-shadow: -2px 8px 37px 10px rgba(0,0,0,0.66);
-        }
-        .box .main{
-            margin-left: 90px;
-        }
-        .box .main h2{
+        .title{
+            margin-left: 100px;
             margin-top: 50px;
-            margin-left: 80px;
+            color: white;
         }
-        div input{
-            margin-top: 30px;
-            margin-left: 10%;
-            filter: blur(.5px);
-            background-color: rgba(255, 255, 255, .8);
-            line-height: 20px;
-            /* border: none none red none; */
+        .content{
+            width: 360px;
+            height: 220px;
+            margin-left: 600px;
+            margin-top: 180px;
+            border: 1px solid black;
+            background-color: #031713;
+            color: white;
         }
-        div input::placeholder{
-            text-align: center;
+        .content h2{
+            margin-left: 40px;
+
         }
-        div input:focus{
-            outline: none;
-            border: white;
+        .content form{
+         
+            margin-left: 30px;
+           margin-top: -10px;
         }
-        .main img{
-            position: absolute;
-            top: 55%;
-            right: 33%;
-            opacity: 0;
+        .content input{
+           width: 150px;
+           height: 30px;
+            margin-top: 10px;
+            border-radius: 10px;
+            
         }
-        button{
-            display: block;
-            margin-top: 20px;
-            margin-left :80px;
-            line-height: 30px;
-            filter: blur(.5px);
-            background-color: rgba(255, 255, 255, .8);
-            background:none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        button a{
-            color: black;
+        .content span{
+            color: #9d0a15;
         }
     </style>
 </head>
 <body>
-    <div class="head">
-    <h1>欢迎来到我的页面</h1>
-    </div>
-    <div class="box">
-        <form action="" class="main">
-            <h2>登录</h2>
-            <input type="text"  class="submit" placeholder="用户" >
-            <div class="btn"><input type="password"  class="password" placeholder="密码"><img src="./photo/眼睛-闭(1).png" alt="" style="width: 20px ;height: 20px;"></div>
-            <br>
-            <button type="submit"><a href="./首页.html"> 登录</a></button>
+    <div class="title"><h1>SCFPS&nbsp智校流能系</h1></div>
+    <div class="content">
+        <h2>智校水流能耗监测平台</h2>
+        <form action="">
+            用户名：<input type="text"><br>
+            &nbsp &nbsp密码：<input type="password"><br>
+            验证码：<input type="text"><span>（随机生成）</span>
         </form>
     </div>
-    <script>
-        const input= document.querySelector('.password')
-        const img= document.querySelector('.main img')
-        input.addEventListener('focus',function(){
-            img.style.opacity=1
-        })
-        input.addEventListener('blur',function(){
-            img.style.opacity=0
-        })
-        const eye= document.querySelector('.box img')
-        eye.addEventListener('click',function(){
-            if(true){
-                img.src='././photo/眼睛_开(1).png'
-                input.type='text'
-            }else{
-                img.src='./photo/眼睛-闭(1).png'
-                input.type='password'
-            }
-        })
-        const contain=document.querySelector('.box')
-        // 点击登录
-        const btn = document.querySelector('button')
-        btn.addEventListener('click',function(){
-            alert('登录成功')
-        })
-    </script>
 </body>
 </html>

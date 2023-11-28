@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>注册</title>
+    <link rel="shortcut icon" href="./photo/logo2.ico" type="image/x-icon">
     <style>
         *{
             margin: 0;
@@ -19,8 +20,9 @@
         }
       
         h1{
-           
-            margin-left: 740px;
+            margin-top: 100px;
+            margin-left: 44vw;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
         .box{
           display: flex;
@@ -30,8 +32,8 @@
             width: 400px;
             height: 300px;
             /* background-color: blue; */
-            margin: 200px auto;
-            backdrop-filter: blur(9px);
+            margin: 100px auto;
+            backdrop-filter: blur(4px);
             border-radius: 20px;
             box-shadow: -2px 8px 37px 10px rgba(0,0,0,0.66);
         }
@@ -39,16 +41,25 @@
             margin-left: 90px;
         }
         .box .main h2{
-            margin-top: 50px;
-            margin-left: 80px;
+            margin-top: 30px;
+            margin-left: 90px;
         }
         div input{
-            margin-top: 30px;
+            margin-top: 15px;
             margin-left: 10%;
             filter: blur(.5px);
             background-color: rgba(255, 255, 255, .8);
             line-height: 20px;
             /* border: none none red none; */
+        }
+        span{
+            display: inline-block;
+            width: 280px;
+            height: 15px;
+            margin-bottom: 5px;
+            vertical-align: middle;
+            line-height: 15px;
+            padding-left: 20px;
         }
         div input::placeholder{
             text-align: center;
@@ -56,12 +67,6 @@
         div input:focus{
             outline: none;
             border: white;
-        }
-        .main img{
-            position: absolute;
-            top: 55%;
-            right: 33%;
-            opacity: 0;
         }
         button{
             display: block;
@@ -78,45 +83,105 @@
         button a{
             color: black;
         }
+        .right{
+            color: green;
+            background: url(../photo/正确.png) no-repeat left center;
+            background-size: 10px;
+            margin-left: -20px;
+        }
+        .error{
+            color: red;
+            background: url(../photo/错误.png) no-repeat ;
+            background-size: 20px;
+        }
     </style>
 </head>
 <body>
+    <div style="height: 90vh; background:url(./photo/花.gif); background-attachment: fixed; background-size:100% 100%;">
     <div class="head">
     <h1>注册您的账号</h1>
     </div>
     <div class="box">
         <form action="" class="main">
             <h2>注册</h2>
-            <input type="text"  class="submit" placeholder="用户名" maxlength="12">
-            <div class="btn"><input type="password"  class="password" placeholder="密码" maxlength="12"><img src="./photo/眼睛-闭(1).png" alt="" style="width: 20px ;height: 20px;"></div>
+            <input type="text"  class="submit" placeholder="用户名" maxlength="12"><br>
+            <span class="span1" style="margin-left: 20px;font-size: 12px;" ></span>
+            <div class="btn"><input type="password"  class="password" placeholder="密码" maxlength="12"></div>
+            <span class="span2" style="margin-left: 20px;font-size: 12px;"></span>
+            <input class="hobby" type="text" minlength="5" placeholder="爱好">
             <br>
-            <button type="submit"><a href="./index.html"> 注册</a></button>
+            <button type="submit" class="zhuce" style="margin-top:30px; margin-left: 90px;"><a href="./index.html"> 注册</a></button>
+           
         </form>
     </div>
+    </div>
     <script>
-        const input= document.querySelector('.password')
-        const img= document.querySelector('.main img')
-        input.addEventListener('focus',function(){
-            img.style.opacity=1
-        })
-        input.addEventListener('blur',function(){
-            img.style.opacity=0
-        })
-        const eye= document.querySelector('.box img')
-        eye.addEventListener('click',function(){
-            if(true){
-                img.src='././photo/眼睛_开(1).png'
-                input.type='text'
-            }else{
-                img.src='./photo/眼睛-闭(1).png'
-                input.type='password'
-            }
-        })
+       
         const contain=document.querySelector('.box')
         // 点击登录
-        const btn = document.querySelector('button')
-        btn.addEventListener('click',function(){
-            alert('注册成功')
+        // const btn = document.querySelector('button')
+        // btn.addEventListener('click',function(){
+        //    console.log();
+        // })
+        const input= document.querySelector('.submit')
+        const password= document.querySelector('.password')
+        const span1= document.querySelector('.span1')
+        const span2= document.querySelector('.span2')
+        input.addEventListener('change',YZname)
+            function YZname(){
+        // 正则规则
+        const reg =/^[a-zA-Z0-9-_]{4,10}$/
+        // 或者   const reg =/^[/d]{6,16}$/
+            if(!reg.test(input.value)){
+                span1.innerHTML='请输入4-10位的数字、字母以及下划线'
+                span1.className='error'
+                return false
+                // span1.innerHTML='输入正确'
+                // localStorage.setItem('uname',input.value)
+                // span1.className='right'
+            }
+                // span1.innerHTML='请输入4-10位的数字、字母以及下划线'
+                // span1.className='error'
+                span1.innerHTML='输入正确'
+                localStorage.setItem('uname',input.value)
+                span1.className='right'
+                return true
+                // e.preventDefault()
+            
+        }
+        password.addEventListener('change',YZpaw)
+            function YZpaw(){
+            const reg1 =/^[a-zA-Z]{4,9}$/
+        // 或者   const reg =/^[/d]{6,16}$/
+            if(!reg1.test(password.value)){
+                span2.innerHTML='请输入4-9位字母'
+                span2.className='error'
+                return false
+                // span2.innerHTML='输入正确'
+                // localStorage.setItem('password',password.value)
+                // span2.className='right'
+            }
+                // span2.innerHTML='请输入4-9位字母'
+                // span2.className='error'
+                span2.innerHTML='输入正确'
+                localStorage.setItem('password',password.value)
+                span2.className='right'
+                return true
+                // e.preventDefault()
+            
+        }       
+        
+       const hobby=document.querySelector('.hobby')
+       hobby.addEventListener('change',function(){
+        localStorage.setItem('hobby',hobby.value)
+       })
+        
+        const zhuce=document.querySelector('.zhuce')
+        zhuce.addEventListener('click',function(e){
+           if(input.value==='')  e.preventDefault()
+           if(password.value==='')  e.preventDefault()
+           if(!YZname()) e.preventDefault()
+           if(!YZpaw()) e.preventDefault()
         })
     </script>
 </body>
